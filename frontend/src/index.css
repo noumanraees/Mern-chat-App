@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+input {
+  @apply block w-full rounded-md px-4 py-3 my-4 bg-dark-input outline-none focus:outline-gray-600 outline-1;
+}
+
+.btn {
+  @apply rounded-md shadow shadow-dark-100  px-5 py-3 text-gray-200 bg-gray-600  transition-all
+  hover:bg-gray-700 hover:shadow-md hover:shadow-dark-100
+  disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-gray-600 disabled:hover:bg-gray-600;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 active:bg-blue-800;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont,  'Roboto','Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* SCROLLBAR CUSTOMIZATION */
+
+/* Chrome */
+.overflow-auto::-webkit-scrollbar {
+  width: 3px;
+}
+.overflow-auto:hover::-webkit-scrollbar{
+  width: 6px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 rounded;
+}
+
+/* Firefox */
+.overflow-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #444 transparent;
+  
+}
