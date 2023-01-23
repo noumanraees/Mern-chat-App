@@ -10,7 +10,7 @@ import { api } from "./lib/axios";
 import { useUser } from "./hooks/useUser";
 import { ApiErrorHolder } from "./components/api-error-holder";
 import NetworkStatus from "./components/network-status";
-import Signup from "./pages/signup";``
+import Signup from "./pages/signup";
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
     api.defaults.headers.common["authorization"] = `Bearer ${user?.token}`;
 
     return (
+        <>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Navigate to={ROUTES.CHANNELS} />} />
@@ -29,9 +30,9 @@ function App() {
                         path={ROUTES.CHANNEL}
                         element={<RequireAuth e={<Home />} />}
                     />
-                </Route>
+                </Route> 
 
-                <Route
+                <Route 
                     path={ROUTES.LOGIN}
                     element={<RequireUnauth e={<Login />} />}
                 />
@@ -41,9 +42,10 @@ function App() {
                 />
                 <Route path={ROUTES.LOGOUT} element={<Logout />} />
             </Routes>
-            <ApiErrorHolder />
-            <NetworkStatus />
+            {/* <ApiErrorHolder /> */}
+            {/* <NetworkStatus /> */}
         </BrowserRouter>
+        </>
     );
 }
 
